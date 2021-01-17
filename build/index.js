@@ -10,7 +10,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const compression_1 = __importDefault(require("compression"));
 const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
-const users_1 = __importDefault(require("./routes/users"));
+const orders_1 = __importDefault(require("./routes/orders"));
 const { config } = require('./config');
 class Server {
     constructor() {
@@ -40,7 +40,7 @@ class Server {
     }
     routes() {
         this.app.use(indexRoutes_1.default);
-        this.app.use('/users', users_1.default);
+        this.app.use('/orders', orders_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

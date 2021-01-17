@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import compression from 'compression';
 import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
-import userRoutes from './routes/users';
+import orderRoutes from './routes/orders';
 const { config } = require('./config');
 
 class Server {
@@ -45,7 +45,7 @@ class Server {
 
     routes() {
         this.app.use(indexRoutes)
-        this.app.use('/users', userRoutes)
+        this.app.use('/orders', orderRoutes)
     }
 
     start() {
