@@ -21,10 +21,13 @@ class Orders {
     getOrders(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
+                console.log('pase por aquí');
                 const ordersDB = yield Orders_1.default.find();
+                console.log('ordersDB', ordersDB);
                 res.json(ordersDB);
             }
             catch (error) {
+                console.log('error', error);
                 return res.status(400).json({
                     mensaje: 'Ocurrio un error',
                     error,
@@ -48,6 +51,7 @@ class Orders {
                 res.json(orderDB);
             }
             catch (error) {
+                console.log('error', error);
                 return res.status(400).json({
                     message: 'Ocurrio un error',
                     error,

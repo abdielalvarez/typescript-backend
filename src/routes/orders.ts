@@ -11,9 +11,12 @@ class Orders {
 
     async getOrders(req: Request, res: Response) {
         try {
+            console.log('pase por aquí');
             const ordersDB = await Order.find()
+            console.log('ordersDB', ordersDB);
             res.json(ordersDB)
         } catch (error) {
+            console.log('error', error);
             return res.status(400).json({
                 mensaje: 'Ocurrio un error',
                 error,
@@ -41,6 +44,7 @@ class Orders {
             }
             res.json(orderDB)
         } catch (error) {
+            console.log('error', error);
             return res.status(400).json({
                 message: 'Ocurrio un error',
                 error,
